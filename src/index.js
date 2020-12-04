@@ -10,4 +10,10 @@ console.log(murkup)
 
 const menuRef = document.querySelector('.js-menu');
 console.log(menuRef)
-// menuRef.insertAdjacentElement("beforeend", murkup);
+menuRef.insertAdjacentHTML("beforeend", murkup);
+
+const Theme = {
+  LIGHT: 'light-theme',
+  DARK: 'dark-theme',
+};
+
