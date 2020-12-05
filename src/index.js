@@ -24,5 +24,8 @@ console.log(toolbarRef)
 const theme_switch_toggle_Ref = document.querySelector('#theme-switch-toggle');
 console.log(theme_switch_toggle_Ref);
 
+bodyRef.addEventListener('change', e => {
+  console.log(e);
+});
 
 
