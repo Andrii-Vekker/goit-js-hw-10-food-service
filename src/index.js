@@ -17,14 +17,12 @@ const Theme = {
   DARK: 'dark-theme',
 };
 
-const toolbarRef = document.querySelector('.toolbar');
-console.log(toolbarRef)
 const bodyRef = document.querySelector('body');
 console.log(bodyRef);
+const toolbarRef = document.querySelector('.toolbar');
+console.log(toolbarRef)
 const theme_switch_toggle_Ref = document.querySelector('#theme-switch-toggle');
 console.log(theme_switch_toggle_Ref);
 
 
-toolbarRef.addEventListener('change', e => {
-    console.log(e)
-})
+
