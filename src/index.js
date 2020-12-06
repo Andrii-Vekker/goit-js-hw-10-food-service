@@ -12,22 +12,43 @@ const menuRef = document.querySelector('.js-menu');
 //console.log(menuRef)
 menuRef.insertAdjacentHTML("beforeend", murkup);
 
+
+const refs = {
+  body: document.querySelector('body'),
+  checkbox: document.querySelector('#theme-switch-toggle'),
+};
+
 const Theme = {
   LIGHT: 'light-theme',
   DARK: 'dark-theme',
 };
-const bodyRef = document.querySelector('body');
-//console.log(bodyRef);
-const toolbarRef = document.querySelector('.toolbar');
-//console.log(toolbarRef)
-const theme_switch_toggle_Ref = document.querySelector('#theme-switch-toggle');
-//console.log(theme_switch_toggle_Ref);
 
-bodyRef.addEventListener('change', e => {
-  console.log(e);
-  const addThemeDark = bodyRef.classList.add(Theme.DARK);
-  const addThemeLight = bodyRef.classList.add(Theme.LIGHT);
-const ligth = e.target
-});
+function handleCheckboxChange() {
+  if (refs.body.className === '') {
+    refs.body.classList.add(Theme.DARK);
+  } else {
+    refs.body.classList.toggle(Theme.LIGHT);
+    refs.body.classList.toggle(Theme.DARK);
+  }
 
+  const currentTheme = refs.body.getAttribute('class');
+
+  localStorage.setItem('theme', currentTheme);
+}
+
+refs.checkbox.addEventListener('change', handleCheckboxChange);
+
+function restoreTheme() {
+  const savedTheme = localStorage.getItem('theme');
+
+  if (savedTheme) {
+    refs.body.classList.add(savedTheme);
+  }
+
+  if (savedTheme === Theme.DARK) {
+    refs.checkbox.setAttribute('checked', true);
+  }
+}
+
+restoreTheme();
 
