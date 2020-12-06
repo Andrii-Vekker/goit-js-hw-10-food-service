@@ -16,16 +16,18 @@ const Theme = {
   LIGHT: 'light-theme',
   DARK: 'dark-theme',
 };
-
 const bodyRef = document.querySelector('body');
-console.log(bodyRef);
+//console.log(bodyRef);
 const toolbarRef = document.querySelector('.toolbar');
-console.log(toolbarRef)
+//console.log(toolbarRef)
 const theme_switch_toggle_Ref = document.querySelector('#theme-switch-toggle');
-console.log(theme_switch_toggle_Ref);
+//console.log(theme_switch_toggle_Ref);
 
 bodyRef.addEventListener('change', e => {
   console.log(e);
+  const addThemeDark = bodyRef.classList.add(Theme.DARK);
+  const addThemeLight = bodyRef.classList.add(Theme.LIGHT);
+const ligth = e.target
 });
 
 
