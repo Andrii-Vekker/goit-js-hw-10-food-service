@@ -23,7 +23,7 @@ const Theme = {
   DARK: 'dark-theme',
 };
 
-function handleCheckboxChange() {
+function onCheckboxChange() {
   if (refs.body.className === '') {
     refs.body.classList.add(Theme.DARK);
   } else {
@@ -36,7 +36,7 @@ function handleCheckboxChange() {
   localStorage.setItem('theme', currentTheme);
 }
 
-refs.checkbox.addEventListener('change', handleCheckboxChange);
+refs.checkbox.addEventListener('change', onCheckboxChange);
 
 function restoreTheme() {
   const savedTheme = localStorage.getItem('theme');
